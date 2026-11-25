@@ -1,33 +1,35 @@
 # Landing page TuturLoka
 
-Halaman promosi Tuturloka untuk masyarakat umum: fitur aplikasi, perkenalan Bu Sari sebagai tutor, cara kerja, kuis contoh Jawa/Sunda, bahasa yang tersedia, dan tanya jawab. Tombol unduh mengarah ke Google Play.
+Halaman utama memakai Next.js App Router dan mengikuti desain referensi di `index.html`. Navigasi ponsel dan kuis Jawa–Sunda memakai React. Kedua versi memakai stylesheet, font Inter, logo, dan gambar Bu Sari dari direktori `assets/`.
 
-Statis: HTML, CSS, dan sedikit JavaScript tanpa framework atau build. Bisa di-host di mana saja (GitHub Pages, Netlify, Vercel, Cloudflare Pages, atau disajikan API Go).
+## Menjalankan Next.js
 
-## Menjalankan lokal
+Gunakan Node.js 22.12 atau lebih baru.
 
-```powershell
-python -m http.server 8099
+```sh
+npm ci
+npm run dev
 ```
 
-Jalankan dari folder repo ini, lalu buka http://localhost:8099.
+Buka [localhost:3000](http://localhost:3000). Untuk menjalankan versi produksi, gunakan `npm run build` lalu `npm start`.
 
-## Isi folder
+## Berkas utama
 
-| Berkas | Isi |
-|---|---|
-| `index.html` | Seluruh halaman |
-| `assets/css/style.css` | Gaya, token warna, responsif (375–1440 px), `prefers-reduced-motion` |
-| `assets/js/main.js` | Menu ponsel, animasi muncul, kuis contoh |
-| `assets/img/` | Render Bu Sari dari `pradigi-app/assets/sari` (diperkecil untuk web) dan logo TuturLoka (kakatua) dari pemilik produk |
-| `assets/fonts/` | Inter (OFL, lihat `Inter-OFL.txt`) |
+- `app/page.jsx` memuat hero tiga ponsel, fitur, Bu Sari, cara kerja, bahasa, ajakan mengunduh, dan FAQ.
+- `app/navigation.jsx`, `app/quiz.jsx`, dan `app/page-effects.jsx` menangani interaksi halaman Next.js.
+- `public/feature-story.js` menyelaraskan panel contoh “Sowan Simbah” dengan posisi scroll pada Next.js dan HTML lokal. Contoh ditampilkan berurutan saat gerakan dikurangi atau JavaScript dinonaktifkan.
+- `assets/img/sari_lesson_*.webp` berisi dua render transparan Bu Sari dari aset Blender lokal `karakter/dewasa/dewasa-kebaya-01.blend`. Katalog aset mencatat kebaya karya joyoboyo.
+- `assets/css/style.css` mengatur tampilan dan breakpoint kedua versi.
+- `index.html` dapat dibuka langsung dari folder proyek untuk membandingkan desain. Versi ini menggunakan `assets/js/main.js`.
 
-## Keputusan desain
+## Sumber galeri busana adat
 
-- Tata letak mengikuti referensi landing page aplikasi yang diberikan pemilik produk: hero dengan tiga ponsel, pita fitur, kartu manfaat di sekitar ponsel, langkah berselang-seling, CTA unduh.
-- Warna dan huruf mengikuti `pradigi-app/DESIGN.md`: putih, biru muda `#4DB8F7` dengan teks biru tua `#062A49`, hanya Inter. Aksen emas dan motif kawung diambil dari kebaya batik Bu Sari.
-- Tidak ada statistik, rating, atau testimoni karangan. Klaim hanya yang benar di aplikasi dan dokumen proyek (Jawa tersedia, Sunda segera hadir, mode tamu, suara diubah jadi teks di HP).
-- Kalimat Jawa/Sunda di mockup dan kuis berasal dari kamus draf Tuturloka (`backend/pradigi-backend/data/seed/`) dan masih menunggu validator bahasa.
-- Tangkapan layar di `pradigi-app/assets/WhatsApp Image ...` adalah rujukan aplikasi lain dan tidak dipakai.
+Galeri menampilkan sepuluh render WebP dari lima pasangan karakter di `karakter/adat-indonesia` dalam pustaka aset lokal. Karakter dasar berasal dari Microsoft Rocketbox dan menggunakan lisensi MIT. [Lisensi Rocketbox](assets/img/adat/rocketbox-LICENSE.txt)
 
-Gaya disusun dengan skill `ui-ux-pro-max` (pola App Store Style Landing, checklist aksesibilitas). Saran font Baloo/Comic Neue dan palet indigo dari skill tidak dipakai karena bertentangan dengan identitas Tuturloka.
+Busana berasal dari AR-Pakaian-Adat. Katalog aset lokal mencatat bahwa izin publikasi busana belum terverifikasi. Nama daerah mengikuti pengelompokan aset di katalog. [Repositori sumber busana](https://github.com/dr-iskandar/AR-Pakaian-Adat)
+
+## Referensi gerakan pada bagian Fitur
+
+- Cula memperlihatkan satu proses dalam beberapa tahap. TuturLoka memakai satu situasi belajar dari memilih ragam sampai membandingkan kosakata. [Studi kasus Refokus](https://www.refokus.com/projects/cula)
+- Gouach memakai scroll untuk membuka detail produknya. Perubahan kalimat dan penjelasan Bu Sari menjadi detail yang dibuka di sini. [Contoh Gouach di Webflow](https://webflow.com/blog/february-2023-projects)
+- Framer menyelaraskan visual yang menetap dengan teks dan indikator kemajuan. TuturLoka memakai prinsip tersebut saat pengunjung menggulir turun maupun naik. [Framer Sticky Scroll](https://www.framer.com/marketplace/components/sticky-scroll/)

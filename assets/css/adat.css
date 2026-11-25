@@ -1,0 +1,61 @@
+.adat-gallery { background: #f9f2e5; }
+.adat-intro { margin-bottom: clamp(30px, 5vw, 56px); }
+.adat-intro h2 { font-size: clamp(32px, 5vw, 56px); font-weight: 800; letter-spacing: -.035em; }
+.adat-intro p { margin-top: 10px; color: var(--muted); font-size: 17px; }
+.adat-regions { display: none; }
+.adat-scenes { display: grid; gap: 20px; }
+.adat-pair {
+  position: relative; isolation: isolate; overflow: hidden;
+  border-radius: 22px; padding: clamp(20px, 4vw, 38px) clamp(12px, 4vw, 38px) 22px;
+  background: #fffaf1; border: 1px solid #e2d0ac;
+}
+.adat-pair::before {
+  content: ""; position: absolute; z-index: -1; inset: 0;
+  background: var(--songket) center top / 124px auto repeat-x;
+  mask-image: linear-gradient(#000, transparent 58%); pointer-events: none;
+}
+.adat-pair h3 { margin-bottom: 8px; text-align: center; font-size: clamp(24px, 4vw, 38px); letter-spacing: -.03em; font-weight: 800; }
+.adat-figures {
+  display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px;
+  max-width: 620px; margin-inline: auto;
+}
+.adat-figures figure { min-width: 0; margin: 0; text-align: center; }
+.adat-figures img {
+  width: 100%; height: auto; aspect-ratio: 7 / 10; object-fit: contain;
+  filter: drop-shadow(0 10px 9px rgb(57 38 17 / .16));
+}
+.adat-figures figcaption { color: var(--muted); font-size: 14px; font-weight: 700; }
+
+@supports selector(.adat-viewer:has(input:checked)) {
+  .adat-viewer { display: grid; grid-template-columns: minmax(0, 220px) minmax(0, 1fr); gap: clamp(22px, 5vw, 64px); align-items: start; }
+  .adat-regions {
+    display: grid; gap: 6px; min-width: 0; margin: 0; padding: 0; border: 0;
+  }
+  .adat-regions legend { padding: 0; margin-bottom: 12px; color: var(--muted); font-size: 14px; font-weight: 800; }
+  .adat-regions label { position: relative; cursor: pointer; }
+  .adat-regions span {
+    display: flex; align-items: center; min-height: 44px; padding: 8px 14px;
+    border: 1px solid transparent; border-radius: 8px; font-weight: 700;
+  }
+  .adat-regions label:hover span { border-color: #cbb083; }
+  .adat-regions input:checked + span { background: var(--navy-900); color: var(--white); }
+  .adat-regions input:focus-visible + span { outline: 3px solid #17608e; outline-offset: 3px; }
+  .adat-pair { display: none; }
+  .adat-viewer:has(input[value="jawa-timur"]:checked) [data-region="jawa-timur"],
+  .adat-viewer:has(input[value="jawa-barat"]:checked) [data-region="jawa-barat"],
+  .adat-viewer:has(input[value="bali"]:checked) [data-region="bali"],
+  .adat-viewer:has(input[value="riau"]:checked) [data-region="riau"],
+  .adat-viewer:has(input[value="aceh"]:checked) [data-region="aceh"] { display: block; }
+  @media (prefers-reduced-motion: no-preference) {
+    .adat-figures { animation: adat-appear .32s var(--ease) both; }
+    @keyframes adat-appear {
+      from { opacity: .3; transform: translateY(7px); }
+      to { opacity: 1; transform: none; }
+    }
+  }
+  @media (max-width: 720px) {
+    .adat-viewer { grid-template-columns: minmax(0, 1fr); }
+    .adat-regions { display: flex; flex-wrap: wrap; }
+    .adat-regions span { padding-inline: 12px; }
+  }
+}

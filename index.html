@@ -14,8 +14,10 @@
   <link rel="apple-touch-icon" href="assets/img/icon-180.png?v=3">
   <link rel="preload" href="assets/fonts/inter-400.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="assets/fonts/inter-800.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="assets/css/style.css?v=2">
+  <link rel="stylesheet" href="assets/css/style.css?v=5">
+  <link rel="stylesheet" href="assets/css/adat.css">
   <script src="assets/js/main.js?v=2" defer></script>
+  <script src="public/feature-story.js?v=2" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#isi">Langsung ke isi</a>
@@ -158,55 +160,70 @@
     </section>
 
     <!-- ============ FITUR / MANFAAT ============ -->
-    <section class="section" id="fitur" aria-labelledby="fitur-title">
+    <section class="section lesson-feature" id="fitur" aria-labelledby="fitur-title">
       <div class="container">
-        <header class="section-head reveal">
-          <p class="pill pill-navy">Kenapa Tuturloka</p>
-          <h2 id="fitur-title">Bukan sekadar kamus. Ini latihan bicara yang paham sopan santun.</h2>
-          <p>Kamus dan penerjemah memberi arti kata. Tuturloka melatih keputusan yang lebih sulit: kata mana yang pas untuk siapa.</p>
+        <header class="lesson-intro">
+          <h2 id="fitur-title">Satu kalimat, beda rasanya.</h2>
+          <p>Lihat bagaimana Bu Sari membantu kamu memilih kata saat berpamitan kepada Simbah.</p>
         </header>
 
-        <div class="benefits">
-          <article class="benefit reveal">
-            <span class="icon-badge"><svg aria-hidden="true"><use href="#i-users"/></svg></span>
-            <h3>Sesuai lawan bicara</h3>
-            <p>Bicara dengan simbah, guru, penjual, atau teman? Tuturloka menunjukkan ragam yang pas: ngoko, krama, atau krama inggil.</p>
-          </article>
-          <article class="benefit reveal">
-            <span class="icon-badge"><svg aria-hidden="true"><use href="#i-shield"/></svg></span>
-            <h3>Aman untuk salah</h3>
-            <p>Berlatih dulu bersama Bu Sari sebelum bicara dengan orang sungguhan. Kalau keliru, Bu Sari menandai kata yang perlu diubah.</p>
-          </article>
-
-          <div class="benefit-phone reveal" aria-hidden="true">
-            <div class="phone phone-flat">
-              <div class="screen screen-drill">
-                <div class="scr-top"><span class="scr-time">07.15</span></div>
-                <p class="scr-title">Ubah ke krama</p>
-                <p class="drill-situation">Kamu mau makan duluan dan pamit ke Simbah.</p>
-                <p class="drill-from">Aku mangan dhisik, ya.</p>
-                <p class="drill-to">Kula nedha rumiyin, nggih.
-                  <span class="bubble-ok"><svg aria-hidden="true"><use href="#i-check"/></svg>Tepat</span>
-                </p>
-                <div class="drill-tip">
-                  <svg aria-hidden="true"><use href="#i-bulb"/></svg>
-                  <p>Untuk dirimu sendiri pakai <b>nedha</b>. <b>Dhahar</b> hanya untuk orang yang kamu hormati.</p>
-                </div>
-                <span class="mini-btn">Kalimat berikutnya</span>
-              </div>
+        <div class="lesson-story" data-lesson-story="">
+          <div class="lesson-stage" aria-hidden="true">
+            <div class="lesson-stage-top">
+              <span>Latihan bahasa Jawa</span><span class="lesson-count"></span>
             </div>
+            <div class="lesson-stage-body">
+              <div class="lesson-character">
+                <img src="assets/img/sari_lesson_greeting.webp" class="lesson-greeting" alt="" width="416" height="532" loading="lazy">
+                <img src="assets/img/sari_lesson_explaining.webp" class="lesson-explaining" alt="" width="416" height="532" loading="lazy">
+              </div>
+              <div class="lesson-scenes"></div>
+            </div>
+            <div class="lesson-progress"><span></span></div>
           </div>
 
-          <article class="benefit reveal">
-            <span class="icon-badge"><svg aria-hidden="true"><use href="#i-chat"/></svg></span>
-            <h3>Dijelaskan dalam Bahasa Indonesia</h3>
-            <p>Kenapa <em>dhahar</em> tidak dipakai untuk diri sendiri? Penjelasannya singkat, jelas, dan langsung di kalimat yang kamu ucapkan.</p>
-          </article>
-          <article class="benefit reveal">
-            <span class="icon-badge"><svg aria-hidden="true"><use href="#i-book"/></svg></span>
-            <h3>Kalimat dari kamus, bukan karangan</h3>
-            <p>Kalimat Jawa dan Sunda diambil dari kamus Tuturloka, bukan dikarang bebas oleh AI. Setiap entri baru terbit setelah diperiksa validator bahasa.</p>
-          </article>
+          <div class="lesson-chapters">
+            <article class="lesson-chapter">
+              <h3>Mulai dari lawan bicara.</h3>
+              <p>Kamu mau makan duluan dan pamit kepada Simbah. Kalimat yang biasa kamu pakai dengan teman perlu disesuaikan saat sowan.</p>
+              <div class="lesson-example lesson-context">
+                <img src="assets/img/sari_lesson_greeting.webp" width="72" height="72" alt="Bu Sari berkebaya batik" loading="lazy" />
+                <div>
+                  <p class="lesson-label">Situasi latihan</p>
+                  <p class="lesson-context-name" lang="jv">Sowan Simbah</p>
+                  <span class="lesson-register">Krama alus</span>
+                </div>
+              </div>
+            </article>
+            <article class="lesson-chapter">
+              <h3>Perbaiki satu kalimat.</h3>
+              <p>Latihan bersama Bu Sari memberi kamu kesempatan mencoba lagi. Di sini, kata <em lang="jv">mangan</em> berubah menjadi <em lang="jv">nedha</em>.</p>
+              <div class="lesson-example lesson-rewrite">
+                <div class="lesson-line"><span class="lesson-label">Kalimat awal</span><p lang="jv">Aku <b>mangan</b> dhisik, ya.</p></div>
+                <div class="lesson-line lesson-answer"><span class="lesson-label">Pilihan krama</span><p lang="jv">Kula <mark>nedha</mark> rumiyin, nggih.</p></div>
+              </div>
+            </article>
+            <article class="lesson-chapter">
+              <h3>Pahami alasan di baliknya.</h3>
+              <p>Penjelasan dalam bahasa Indonesia menunjukkan kenapa pilihan katanya berubah. Artinya sama, tetapi siapa yang makan menentukan kata yang kamu pakai.</p>
+              <div class="lesson-example lesson-note">
+                <p class="lesson-label">Catatan Bu Sari</p>
+                <p>Pakai <b lang="jv">nedha</b> untuk dirimu sendiri dan <b lang="jv">dhahar</b> untuk orang yang kamu hormati.</p>
+              </div>
+            </article>
+            <article class="lesson-chapter">
+              <h3>Bandingkan ragam katanya.</h3>
+              <p>Kamus TuturLoka memperlihatkan bagaimana kata “makan” berubah sesuai konteks. Sekarang coba pilih kalimatmu sendiri.</p>
+              <div class="lesson-example lesson-words">
+                <dl>
+                  <div><dt lang="jv">mangan</dt><dd>Ngoko</dd></div>
+                  <div><dt lang="jv">nedha</dt><dd>Krama untuk diri sendiri</dd></div>
+                  <div><dt lang="jv">dhahar</dt><dd>Untuk orang yang dihormati</dd></div>
+                </dl>
+              </div>
+              <a class="lesson-cta" href="#coba">Coba kuis bahasa Jawa</a>
+            </article>
+          </div>
         </div>
       </div>
     </section>
@@ -413,6 +430,92 @@
     </section>
 
     <!-- ============ CTA ============ -->
+    <section class="section adat-gallery" id="busana-adat" aria-labelledby="adat-title">
+      <div class="container">
+        <header class="adat-intro">
+          <h2 id="adat-title">Busana adat Indonesia</h2>
+          <p>Lihat detail busana pria dan wanita dari lima daerah.</p>
+        </header>
+        <div class="adat-viewer">
+          <fieldset class="adat-regions">
+            <legend>Pilih daerah</legend>
+            <label><input class="sr-only" type="radio" name="adat-region" value="jawa-timur" checked><span>Jawa Timur</span></label>
+            <label><input class="sr-only" type="radio" name="adat-region" value="jawa-barat"><span>Jawa Barat</span></label>
+            <label><input class="sr-only" type="radio" name="adat-region" value="bali"><span>Bali</span></label>
+            <label><input class="sr-only" type="radio" name="adat-region" value="riau"><span>Riau</span></label>
+            <label><input class="sr-only" type="radio" name="adat-region" value="aceh"><span>Aceh</span></label>
+          </fieldset>
+          <div class="adat-scenes">
+            <section class="adat-pair" data-region="jawa-timur" aria-labelledby="adat-jawa-timur">
+              <h3 id="adat-jawa-timur">Jawa Timur</h3>
+              <div class="adat-figures">
+                <figure>
+                  <img src="assets/img/adat/jawa-timur-pria.webp" width="420" height="600" loading="lazy" alt="Karakter pria mengenakan busana Jawa Timur">
+                  <figcaption>Pria</figcaption>
+                </figure>
+                <figure>
+                  <img src="assets/img/adat/jawa-timur-wanita.webp" width="420" height="600" loading="lazy" alt="Karakter wanita mengenakan busana Jawa Timur">
+                  <figcaption>Wanita</figcaption>
+                </figure>
+              </div>
+            </section>
+            <section class="adat-pair" data-region="jawa-barat" aria-labelledby="adat-jawa-barat">
+              <h3 id="adat-jawa-barat">Jawa Barat</h3>
+              <div class="adat-figures">
+                <figure>
+                  <img src="assets/img/adat/jawa-barat-pria.webp" width="420" height="600" loading="lazy" alt="Karakter pria mengenakan busana Jawa Barat">
+                  <figcaption>Pria</figcaption>
+                </figure>
+                <figure>
+                  <img src="assets/img/adat/jawa-barat-wanita.webp" width="420" height="600" loading="lazy" alt="Karakter wanita mengenakan busana Jawa Barat">
+                  <figcaption>Wanita</figcaption>
+                </figure>
+              </div>
+            </section>
+            <section class="adat-pair" data-region="bali" aria-labelledby="adat-bali">
+              <h3 id="adat-bali">Bali</h3>
+              <div class="adat-figures">
+                <figure>
+                  <img src="assets/img/adat/bali-pria.webp" width="420" height="600" loading="lazy" alt="Karakter pria mengenakan busana Bali">
+                  <figcaption>Pria</figcaption>
+                </figure>
+                <figure>
+                  <img src="assets/img/adat/bali-wanita.webp" width="420" height="600" loading="lazy" alt="Karakter wanita mengenakan busana Bali">
+                  <figcaption>Wanita</figcaption>
+                </figure>
+              </div>
+            </section>
+            <section class="adat-pair" data-region="riau" aria-labelledby="adat-riau">
+              <h3 id="adat-riau">Riau</h3>
+              <div class="adat-figures">
+                <figure>
+                  <img src="assets/img/adat/riau-pria.webp" width="420" height="600" loading="lazy" alt="Karakter pria mengenakan busana Riau">
+                  <figcaption>Pria</figcaption>
+                </figure>
+                <figure>
+                  <img src="assets/img/adat/riau-wanita.webp" width="420" height="600" loading="lazy" alt="Karakter wanita mengenakan busana Riau">
+                  <figcaption>Wanita</figcaption>
+                </figure>
+              </div>
+            </section>
+            <section class="adat-pair" data-region="aceh" aria-labelledby="adat-aceh">
+              <h3 id="adat-aceh">Aceh</h3>
+              <div class="adat-figures">
+                <figure>
+                  <img src="assets/img/adat/aceh-pria.webp" width="420" height="600" loading="lazy" alt="Karakter pria mengenakan busana Aceh">
+                  <figcaption>Pria</figcaption>
+                </figure>
+                <figure>
+                  <img src="assets/img/adat/aceh-wanita.webp" width="420" height="600" loading="lazy" alt="Karakter wanita mengenakan busana Aceh">
+                  <figcaption>Wanita</figcaption>
+                </figure>
+              </div>
+            </section>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section class="cta-band" aria-labelledby="cta-title">
       <div class="container cta-grid">
         <div class="cta-copy reveal">
@@ -480,6 +583,7 @@
           <li><a href="#fitur">Fitur</a></li>
           <li><a href="#bu-sari">Bu Sari</a></li>
           <li><a href="#cara-kerja">Cara kerja</a></li>
+          <li><a href="#busana-adat">Busana adat</a></li>
           <li><a href="#tanya">Tanya jawab</a></li>
         </ul>
       </nav>
@@ -492,6 +596,11 @@
         </a>
       </div>
     </div>
+    <details class="container motif-credits">
+      <summary>Sumber motif kain</summary>
+      <p>Siluet batik diolah dari foto <a href="https://commons.wikimedia.org/wiki/File:Batik_pattern_-_kawung.jpg">kawung karya Alteaven</a>. Foto dan adaptasinya berlisensi <a href="https://creativecommons.org/licenses/by-sa/3.0/">CC BY-SA 3.0</a>.</p>
+      <p>Siluet <a href="https://www.metmuseum.org/art/collection/search/315915">tapis Lampung</a> dan <a href="https://www.metmuseum.org/art/collection/search/308003">hinggi Sumba</a> berasal dari koleksi The Met. Siluet <a href="https://www.clevelandart.org/art/1955.307">songket Palembang</a> berasal dari Cleveland Museum of Art. Ketiga foto sumber tersedia melalui CC0.</p>
+    </details>
     <div class="container footer-bottom">
       <p>© 2026 Tuturloka. Bu Sari adalah karakter milik tim Tuturloka.</p>
       <p>Google Play adalah merek dagang Google LLC.</p>
