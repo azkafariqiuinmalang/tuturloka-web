@@ -232,16 +232,21 @@
   .header-inner { height: 58px; }
   :root { --header-h: 84px; }
   .hero-card { border-radius: 30px; padding-top: 30px; }
-  .hero-card .hero-stage { height: 520px; }
+  /* Di HP ponsel tengah memenuhi panggung: gelembung naik ke atasnya, chip turun ke bawahnya. */
+  .hero-card .hero-stage { height: 690px; }
+  .hero-card .phone-main { margin-bottom: 66px; }
+  .hero-card .phone-side { bottom: 56px; }
   .hero-card .phone-left { left: calc(50% - 200px); }
   .hero-card .phone-right { right: calc(50% - 200px); }
   .hero-kayon { right: -10%; top: auto; bottom: 0; width: 90%; }
-  .fx { max-width: 200px; font-size: 14px; padding: 10px 12px; }
+  .fx { max-width: 236px; font-size: 14px; padding: 10px 12px; }
+  .fx-wrong { top: 0; right: 0; }
+  .fx-right { top: 52px; left: 0; }
   .hero-facts { flex-wrap: nowrap; gap: 8px; }
   .hero-facts li { flex: 1 1 0; min-width: 0; padding: 8px 10px; border-radius: 14px; }
   .hero-facts b { font-size: 15px; }
   .hero-facts span { font-size: 12px; line-height: 1.3; }
-  .tangga-chip { top: 2%; }
+  .tangga-chip { top: auto; bottom: 0; left: 50%; transform: translateX(-50%); white-space: nowrap; }
   .float-download {
     left: 12px; right: 12px; bottom: 12px; border-radius: 20px;
     padding: 8px 10px 8px 8px; justify-content: flex-start;
