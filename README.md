@@ -20,6 +20,8 @@ Buka [localhost:3000](http://localhost:3000). Untuk menjalankan versi produksi, 
 - `public/feature-story.js` menyelaraskan panel contoh “Sowan Simbah” dengan posisi scroll pada Next.js dan HTML lokal. Contoh ditampilkan berurutan saat gerakan dikurangi atau JavaScript dinonaktifkan.
 - `assets/img/sari_lesson_*.webp` berisi dua render transparan Bu Sari dari aset Blender lokal `karakter/dewasa/dewasa-kebaya-01.blend`. Katalog aset mencatat kebaya karya joyoboyo.
 - `assets/css/style.css` mengatur tampilan dan breakpoint kedua versi.
+- `assets/css/budaya.css` dimuat terakhir dan memberi tata letak ala Praktika dengan unsur budaya: header pil dengan garis progres parang, hero berupa kartu dengan gunungan berayun dan gelembung koreksi, pita aksara Jawa, bingkai gapura dan bayangan wayang untuk Bu Sari, langkah belajar dalam grid bento, atap joglo, dan kartu unduh mengambang. Semua animasinya berhenti bila pengunjung memilih gerak dikurangi.
+- `assets/fonts/noto-sans-javanese.woff` adalah potongan Noto Sans Javanese (OFL, lihat `NotoSansJavanese-OFL.txt`) yang hanya berisi aksara Jawa. Browser baru mengunduhnya bila halaman menampilkan aksara.
 - `index.html` dapat dibuka langsung dari folder proyek untuk membandingkan desain. Versi ini menggunakan `assets/js/main.js`.
 
 ## Sumber galeri busana adat

@@ -4,6 +4,7 @@ import hero from "../assets/img/hero_wave.webp";
 import { siteUrl } from "./site-url";
 import "../assets/css/style.css";
 import "../assets/css/adat.css";
+import "../assets/css/budaya.css";
 
 export const metadata = {
   metadataBase: new URL(siteUrl),

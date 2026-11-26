@@ -17,3 +17,13 @@ Folder `sources` menyimpan empat foto yang diunduh dari koleksi publik. SVG di f
 - **Hinggi.** *Man’s Shoulder or Hip Cloth (Hinggi)*, Sumba, sekitar 1900. The Metropolitan Museum of Art, 30.87.10. Foto Open Access, CC0. [Katalog](https://www.metmuseum.org/art/collection/search/308003) · [Unduhan sumber](https://images.metmuseum.org/CRDImages/ao/web-large/80075.jpg)
 
 Siluet tapis, songket, dan hinggi dalam folder ini juga tersedia dengan [CC0 1.0](https://creativecommons.org/publicdomain/zero/1.0/). [Kebijakan Open Access The Met](https://www.metmuseum.org/hubs/open-access)
+
+## Motif buatan tim
+
+Tiga berkas ini digambar langsung sebagai SVG oleh tim TuturLoka, tanpa foto sumber, dan dipakai di `assets/css/budaya.css`.
+
+| Berkas | Isi | Dipakai di |
+| --- | --- | --- |
+| [Gunungan](gunungan.svg) | Kayon wayang: daun runcing, pohon hayat, gapura, dan tangkai dalang | Latar hero yang berayun pelan |
+| [Joglo](joglo.svg) | Siluet atap joglo (brunjung, penanggap, penitih) | Atap kartu ajakan penutup dan mahkota bagian busana adat |
+| [Parang](parang.svg) | Satu lereng parang dengan titik mlinjon, diulang mendatar | Garis progres baca di bawah header dan pita footer |

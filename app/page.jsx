@@ -45,14 +45,17 @@ export default function Home() {
           </a>
           <Navigation />
           <a className="btn btn-navy btn-sm header-cta" href="https://play.google.com/store/apps/details?id=com.khasyaraka.scout_os&amp;pcampaignid=web_share" target="_blank" rel="noopener">
-            Unduh aplikasi <svg aria-hidden="true"><use href="#i-arrow"/></svg>
+            Unduh gratis <svg aria-hidden="true"><use href="#i-arrow"/></svg>
           </a>
         </div>
+      <div className="read-progress" aria-hidden="true"><span></span></div>
       </header>
 
       <main id="isi">
         <section className="hero" id="beranda" aria-labelledby="hero-title">
-          <div className="container hero-copy">
+          <div className="container hero-card">
+            <span className="hero-kayon" aria-hidden="true"></span>
+            <div className="hero-copy">
             <p className="pill">Bahasa Jawa &amp; Sunda · bersama Bu Sari</p>
             <h1 id="hero-title">Ngobrol sopan dalam bahasa daerah, <span className="hl">kepada siapa saja</span></h1>
             <p className="lead">Latih unggah-ungguh Jawa dan undak-usuk Sunda lewat obrolan dengan Bu Sari. Kamu jadi tahu kapan bilang <em>mangan</em>, <em>nedha</em>, atau <em>dhahar</em>, dan kenapa.</p>
@@ -64,6 +67,12 @@ export default function Home() {
               <a className="btn btn-ghost" href="#cara-kerja">Lihat cara kerjanya</a>
             </div>
             <p className="hero-note">Bisa langsung dicoba sebagai tamu, tanpa akun.</p>
+            <p className="hero-aksara"><span className="aks" aria-hidden="true">ꦱꦸꦒꦼꦁꦫꦮꦸꦃ</span> Sugeng rawuh</p>
+            <ul className="hero-facts" aria-label="Sekilas TuturLoka">
+              <li><b>Gratis</b><span>diunduh dan dipakai</span></li>
+              <li><b>Tanpa akun</b><span>mulai sebagai tamu</span></li>
+              <li><b>Dari kamus</b><span>bukan karangan AI</span></li>
+            </ul>
           </div>
 
           <div className="hero-stage" aria-hidden="true">
@@ -112,6 +121,12 @@ export default function Home() {
               </div>
             </div>
 
+            <div className="fix-bubbles">
+              <p className="fx fx-wrong">Simbah <mark>wis mangan</mark>?</p>
+              <p className="fx fx-right"><small>Lebih sopan kepada Simbah</small>Simbah <mark>sampun dhahar</mark>?</p>
+            </div>
+            <div className="tangga-chip"><span className="tangga"><i></i><i></i><i></i></span><span><b>Tangga unggah-ungguh</b>ngoko sampai krama inggil</span></div>
+
             <div className="phone phone-side phone-right">
               <div className="screen screen-report">
                 <div className="scr-top"><span className="scr-time">09.48</span></div>
@@ -128,10 +143,12 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="ribbon" aria-hidden="true">
+          </div>
+
+          <div className="ribbon ribbon-aksara" aria-hidden="true">
             <div className="ribbon-track">
-              <span>Ngobrol dengan Bu Sari</span><span>Unggah-ungguh</span><span>Undak-usuk</span><span>Ubah ke krama</span><span>Baca lantang</span><span>Kartu ragam</span><span>Rapor bicara</span>
-              <span>Ngobrol dengan Bu Sari</span><span>Unggah-ungguh</span><span>Undak-usuk</span><span>Ubah ke krama</span><span>Baca lantang</span><span>Kartu ragam</span><span>Rapor bicara</span>
+              <span><i className="aks">ꦲꦤꦕꦫꦏ</i>ha na ca ra ka</span><span>Ngobrol dengan Bu Sari</span><span><i className="aks">ꦢꦠꦱꦮꦭ</i>da ta sa wa la</span><span>Unggah-ungguh</span><span>Undak-usuk</span><span><i className="aks">ꦥꦝꦗꦪꦚ</i>pa dha ja ya nya</span><span>Ubah ke krama</span><span>Baca lantang</span><span><i className="aks">ꦩꦒꦧꦛꦔ</i>ma ga ba tha nga</span><span>Kartu ragam</span><span>Rapor bicara</span>
+              <span><i className="aks">ꦲꦤꦕꦫꦏ</i>ha na ca ra ka</span><span>Ngobrol dengan Bu Sari</span><span><i className="aks">ꦢꦠꦱꦮꦭ</i>da ta sa wa la</span><span>Unggah-ungguh</span><span>Undak-usuk</span><span><i className="aks">ꦥꦝꦗꦪꦚ</i>pa dha ja ya nya</span><span>Ubah ke krama</span><span>Baca lantang</span><span><i className="aks">ꦩꦒꦧꦛꦔ</i>ma ga ba tha nga</span><span>Kartu ragam</span><span>Rapor bicara</span>
             </div>
           </div>
         </section>
@@ -139,6 +156,7 @@ export default function Home() {
         <section className="section lesson-feature" id="fitur" aria-labelledby="fitur-title">
           <div className="container">
             <header className="lesson-intro">
+              <p className="eyebrow">Fitur</p>
               <h2 id="fitur-title">Satu kalimat, beda rasanya.</h2>
               <p>Lihat bagaimana Bu Sari membantu kamu memilih kata saat berpamitan kepada Simbah.</p>
             </header>
@@ -208,6 +226,7 @@ export default function Home() {
           <div className="container sari-grid">
             <div className="sari-visual reveal">
               <div className="sari-halo" aria-hidden="true"></div>
+              <img className="sari-shadow" src={heroWave.src} alt="" aria-hidden="true" width="720" height="900" loading="lazy" />
               <img className="sari-img" src={heroWave.src} alt="Bu Sari, tutor 3D Tuturloka, berkebaya batik cokelat dan berkacamata, melambaikan tangan." width="720" height="900" loading="lazy" />
               <p className="float-bubble fb-1" aria-hidden="true">Halo! Ibu temani kamu latihan, ya.</p>
               <p className="float-bubble fb-2" aria-hidden="true"><em>Sugeng enjing!</em></p>
@@ -245,7 +264,7 @@ export default function Home() {
               <p>Satu pelajaran berisi satu situasi nyata. Selesai dalam beberapa menit, bisa diulang kapan saja.</p>
             </header>
 
-            <ol className="steps">
+            <ol className="steps steps-bento">
               <li className="step reveal">
                 <div className="step-copy">
                   <span className="step-num">1</span>
@@ -394,12 +413,13 @@ export default function Home() {
 
         <AdatGallery />
 
-        <section className="cta-band" aria-labelledby="cta-title">
+        <section className="cta-band cta-joglo" aria-labelledby="cta-title">
           <div className="container cta-grid">
             <div className="cta-copy reveal">
               <p className="pill pill-gold">Mulai hari ini</p>
               <h2 id="cta-title">Siap sowan ke Simbah dengan krama yang pas?</h2>
               <p>Unduh Tuturloka, pilih satu situasi, dan ngobrol dengan Bu Sari. Sedikit demi sedikit, yang penting rutin: <em>alon-alon waton kelakon</em>.</p>
+              <p className="cta-aksara"><span className="aks" aria-hidden="true">ꦲꦭꦺꦴꦤ꧀ꦲꦭꦺꦴꦤ꧀ꦮꦠꦺꦴꦤ꧀ꦏꦼꦭꦏꦺꦴꦤ꧀</span></p>
               <a className="btn-store btn-store-light" href="https://play.google.com/store/apps/details?id=com.khasyaraka.scout_os&amp;pcampaignid=web_share" target="_blank" rel="noopener">
                 <svg aria-hidden="true"><use href="#i-play"/></svg>
                 <span><small>Dapatkan di</small>Google Play</span>
@@ -483,6 +503,10 @@ export default function Home() {
           <p>Google Play adalah merek dagang Google LLC.</p>
         </div>
       </footer>
+      <a className="float-download" href="https://play.google.com/store/apps/details?id=com.khasyaraka.scout_os&amp;pcampaignid=web_share" target="_blank" rel="noopener" data-float-download="">
+        <img src={logoTuturloka.src} alt="" width="44" height="44" />
+        <span><b>Unduh TuturLoka</b><small>Gratis di Google Play</small></span>
+      </a>
       <PageEffects />
       <Script src="/feature-story.js" strategy="afterInteractive" />
     </>

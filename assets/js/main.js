@@ -25,6 +25,30 @@
   window.addEventListener("scroll", onScroll, { passive: true });
   onScroll();
 
+  // Garis parang di bawah header terisi sesuai posisi baca.
+  var updateRead = function () {
+    var max = document.documentElement.scrollHeight - window.innerHeight;
+    document.documentElement.style.setProperty("--read", max > 0 ? String(Math.min(1, window.scrollY / max)) : "0");
+  };
+  window.addEventListener("scroll", updateRead, { passive: true });
+  updateRead();
+
+  // Kartu unduh muncul setelah hero terlewati dan sembunyi saat ajakan penutup atau footer terlihat.
+  var floatDownload = document.querySelector("[data-float-download]");
+  var heroEl = document.querySelector(".hero");
+  var ctaEl = document.querySelector(".cta-band");
+  var footerEl = document.querySelector(".site-footer");
+  if (floatDownload && heroEl && "IntersectionObserver" in window) {
+    var seen = new Map();
+    var floatObserver = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) { seen.set(entry.target, entry.isIntersecting); });
+      floatDownload.classList.toggle("is-shown", !seen.get(heroEl) && !seen.get(ctaEl) && !seen.get(footerEl));
+    }, { threshold: 0 });
+    floatObserver.observe(heroEl);
+    if (ctaEl) floatObserver.observe(ctaEl);
+    if (footerEl) floatObserver.observe(footerEl);
+  }
+
   // Animasi muncul saat terlihat (langsung tampil bila pengguna memilih gerak dikurangi)
   var reveals = document.querySelectorAll(".reveal");
   var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;

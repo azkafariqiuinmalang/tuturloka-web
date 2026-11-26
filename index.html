@@ -16,7 +16,8 @@
   <link rel="preload" href="assets/fonts/inter-800.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="assets/css/style.css?v=5">
   <link rel="stylesheet" href="assets/css/adat.css">
-  <script src="assets/js/main.js?v=2" defer></script>
+  <link rel="stylesheet" href="assets/css/budaya.css">
+  <script src="assets/js/main.js?v=3" defer></script>
   <script src="public/feature-story.js?v=2" defer></script>
 </head>
 <body>
@@ -64,15 +65,18 @@
         </ul>
       </nav>
       <a class="btn btn-navy btn-sm header-cta" href="https://play.google.com/store/apps/details?id=com.khasyaraka.scout_os&amp;pcampaignid=web_share" target="_blank" rel="noopener">
-        Unduh aplikasi <svg aria-hidden="true"><use href="#i-arrow"/></svg>
+        Unduh gratis <svg aria-hidden="true"><use href="#i-arrow"/></svg>
       </a>
     </div>
-  </header>
+  <div class="read-progress" aria-hidden="true"><span></span></div>
+      </header>
 
   <main id="isi">
     <!-- ============ HERO ============ -->
     <section class="hero" id="beranda" aria-labelledby="hero-title">
-      <div class="container hero-copy">
+      <div class="container hero-card">
+            <span class="hero-kayon" aria-hidden="true"></span>
+            <div class="hero-copy">
         <p class="pill">Bahasa Jawa &amp; Sunda · bersama Bu Sari</p>
         <h1 id="hero-title">Ngobrol sopan dalam bahasa daerah, <span class="hl">kepada siapa saja</span></h1>
         <p class="lead">Latih unggah-ungguh Jawa dan undak-usuk Sunda lewat obrolan dengan Bu Sari. Kamu jadi tahu kapan bilang <em>mangan</em>, <em>nedha</em>, atau <em>dhahar</em>, dan kenapa.</p>
@@ -84,6 +88,12 @@
           <a class="btn btn-ghost" href="#cara-kerja">Lihat cara kerjanya</a>
         </div>
         <p class="hero-note">Bisa langsung dicoba sebagai tamu, tanpa akun.</p>
+            <p class="hero-aksara"><span class="aks" aria-hidden="true">ꦱꦸꦒꦼꦁꦫꦮꦸꦃ</span> Sugeng rawuh</p>
+            <ul class="hero-facts" aria-label="Sekilas TuturLoka">
+              <li><b>Gratis</b><span>diunduh dan dipakai</span></li>
+              <li><b>Tanpa akun</b><span>mulai sebagai tamu</span></li>
+              <li><b>Dari kamus</b><span>bukan karangan AI</span></li>
+            </ul>
       </div>
 
       <div class="hero-stage" aria-hidden="true">
@@ -135,7 +145,13 @@
         </div>
 
         <!-- Ponsel kanan: rapor -->
-        <div class="phone phone-side phone-right">
+        <div class="fix-bubbles">
+              <p class="fx fx-wrong">Simbah <mark>wis mangan</mark>?</p>
+              <p class="fx fx-right"><small>Lebih sopan kepada Simbah</small>Simbah <mark>sampun dhahar</mark>?</p>
+            </div>
+            <div class="tangga-chip"><span class="tangga"><i></i><i></i><i></i></span><span><b>Tangga unggah-ungguh</b>ngoko sampai krama inggil</span></div>
+
+            <div class="phone phone-side phone-right">
           <div class="screen screen-report">
             <div class="scr-top"><span class="scr-time">09.48</span></div>
             <p class="scr-title">Rapor bicara</p>
@@ -151,11 +167,13 @@
         </div>
       </div>
 
-      <div class="ribbon" aria-hidden="true">
+      </div>
+
+          <div class="ribbon ribbon-aksara" aria-hidden="true">
         <div class="ribbon-track">
-          <span>Ngobrol dengan Bu Sari</span><span>Unggah-ungguh</span><span>Undak-usuk</span><span>Ubah ke krama</span><span>Baca lantang</span><span>Kartu ragam</span><span>Rapor bicara</span>
-          <span>Ngobrol dengan Bu Sari</span><span>Unggah-ungguh</span><span>Undak-usuk</span><span>Ubah ke krama</span><span>Baca lantang</span><span>Kartu ragam</span><span>Rapor bicara</span>
-        </div>
+              <span><i class="aks">ꦲꦤꦕꦫꦏ</i>ha na ca ra ka</span><span>Ngobrol dengan Bu Sari</span><span><i class="aks">ꦢꦠꦱꦮꦭ</i>da ta sa wa la</span><span>Unggah-ungguh</span><span>Undak-usuk</span><span><i class="aks">ꦥꦝꦗꦪꦚ</i>pa dha ja ya nya</span><span>Ubah ke krama</span><span>Baca lantang</span><span><i class="aks">ꦩꦒꦧꦛꦔ</i>ma ga ba tha nga</span><span>Kartu ragam</span><span>Rapor bicara</span>
+              <span><i class="aks">ꦲꦤꦕꦫꦏ</i>ha na ca ra ka</span><span>Ngobrol dengan Bu Sari</span><span><i class="aks">ꦢꦠꦱꦮꦭ</i>da ta sa wa la</span><span>Unggah-ungguh</span><span>Undak-usuk</span><span><i class="aks">ꦥꦝꦗꦪꦚ</i>pa dha ja ya nya</span><span>Ubah ke krama</span><span>Baca lantang</span><span><i class="aks">ꦩꦒꦧꦛꦔ</i>ma ga ba tha nga</span><span>Kartu ragam</span><span>Rapor bicara</span>
+            </div>
       </div>
     </section>
 
@@ -163,6 +181,7 @@
     <section class="section lesson-feature" id="fitur" aria-labelledby="fitur-title">
       <div class="container">
         <header class="lesson-intro">
+              <p class="eyebrow">Fitur</p>
           <h2 id="fitur-title">Satu kalimat, beda rasanya.</h2>
           <p>Lihat bagaimana Bu Sari membantu kamu memilih kata saat berpamitan kepada Simbah.</p>
         </header>
@@ -233,6 +252,7 @@
       <div class="container sari-grid">
         <div class="sari-visual reveal">
           <div class="sari-halo" aria-hidden="true"></div>
+              <img class="sari-shadow" src="assets/img/hero_wave.webp" alt="" aria-hidden="true" width="720" height="900" loading="lazy">
           <img class="sari-img" src="assets/img/hero_wave.webp" alt="Bu Sari, tutor 3D Tuturloka, berkebaya batik cokelat dan berkacamata, melambaikan tangan." width="720" height="900" loading="lazy">
           <p class="float-bubble fb-1" aria-hidden="true">Halo! Ibu temani kamu latihan, ya.</p>
           <p class="float-bubble fb-2" aria-hidden="true"><em>Sugeng enjing!</em></p>
@@ -271,7 +291,7 @@
           <p>Satu pelajaran berisi satu situasi nyata. Selesai dalam beberapa menit, bisa diulang kapan saja.</p>
         </header>
 
-        <ol class="steps">
+        <ol class="steps steps-bento">
           <li class="step reveal">
             <div class="step-copy">
               <span class="step-num">1</span>
@@ -516,12 +536,13 @@
       </div>
     </section>
 
-    <section class="cta-band" aria-labelledby="cta-title">
+    <section class="cta-band cta-joglo" aria-labelledby="cta-title">
       <div class="container cta-grid">
         <div class="cta-copy reveal">
           <p class="pill pill-gold">Mulai hari ini</p>
           <h2 id="cta-title">Siap sowan ke Simbah dengan krama yang pas?</h2>
           <p>Unduh Tuturloka, pilih satu situasi, dan ngobrol dengan Bu Sari. Sedikit demi sedikit, yang penting rutin: <em>alon-alon waton kelakon</em>.</p>
+              <p class="cta-aksara"><span class="aks" aria-hidden="true">ꦲꦭꦺꦴꦤ꧀ꦲꦭꦺꦴꦤ꧀ꦮꦠꦺꦴꦤ꧀ꦏꦼꦭꦏꦺꦴꦤ꧀</span></p>
           <a class="btn-store btn-store-light" href="https://play.google.com/store/apps/details?id=com.khasyaraka.scout_os&amp;pcampaignid=web_share" target="_blank" rel="noopener">
             <svg aria-hidden="true"><use href="#i-play"/></svg>
             <span><small>Dapatkan di</small>Google Play</span>
@@ -606,5 +627,9 @@
       <p>Google Play adalah merek dagang Google LLC.</p>
     </div>
   </footer>
+      <a class="float-download" href="https://play.google.com/store/apps/details?id=com.khasyaraka.scout_os&amp;pcampaignid=web_share" target="_blank" rel="noopener" data-float-download="">
+        <img src="assets/img/logo-tuturloka.png" alt="" width="44" height="44">
+        <span><b>Unduh TuturLoka</b><small>Gratis di Google Play</small></span>
+      </a>
 </body>
 </html>

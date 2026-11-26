@@ -1,0 +1,260 @@
+/* TuturLoka: tata letak ala Praktika dengan unsur budaya.
+   Dimuat setelah style.css dan adat.css, jadi hanya menimpa yang perlu. Palet tetap putih, biru muda
+   #4DB8F7, biru tua #062A49, dan aksen emas/sogan dari kebaya Bu Sari. Gunungan, joglo, dan parang
+   digambar tim (assets/motifs); kawung, tapis, songket, dan hinggi tetap memakai siluet berlisensi. */
+
+@font-face {
+  font-family: "Noto Sans Javanese";
+  src: url("../fonts/noto-sans-javanese.woff") format("woff");
+  font-display: swap;
+  /* Hanya diunduh bila halaman memang menampilkan aksara Jawa. */
+  unicode-range: U+A980-A9DF, U+25CC;
+}
+
+:root {
+  --header-h: 92px;
+  --read: 0;
+  --gunungan: url("../motifs/gunungan.svg");
+  --joglo: url("../motifs/joglo.svg");
+  --parang: url("../motifs/parang.svg");
+  --sogan: #9A5B17;
+}
+
+.aks { font-family: "Noto Sans Javanese", serif; font-style: normal; font-weight: 400; line-height: 1.6; }
+.eyebrow { font-size: 13px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; color: var(--gold-600); }
+
+/* ---------- Header: pil mengambang + garis parang ---------- */
+.site-header { height: auto; padding: 14px 16px 0; background: transparent; -webkit-backdrop-filter: none; backdrop-filter: none; border: 0; box-shadow: none; }
+.site-header.is-scrolled { border: 0; box-shadow: none; }
+.header-inner {
+  height: 64px; width: min(1240px, 100%); padding: 0 10px 0 18px; border-radius: 999px;
+  background: rgb(255 255 255 / .92); -webkit-backdrop-filter: saturate(1.4) blur(12px); backdrop-filter: saturate(1.4) blur(12px);
+  border: 1px solid #E3EEF7; box-shadow: 0 8px 30px rgb(6 42 73 / .10);
+  transition: box-shadow .2s var(--ease);
+}
+.site-header.is-scrolled .header-inner { box-shadow: 0 12px 34px rgb(6 42 73 / .16); }
+.header-cta { border-radius: 999px; }
+.read-progress { width: min(1180px, calc(100% - 64px)); height: 6px; margin: 7px auto 0; border-radius: 6px; background: rgb(252 239 217 / .9); overflow: hidden; }
+.read-progress span {
+  display: block; width: 100%; height: 100%; transform-origin: left; transform: scaleX(var(--read));
+  background: var(--parang) left center / 16px 100% repeat-x, var(--gold-300);
+}
+
+/* ---------- Hero: kartu besar ---------- */
+.hero { padding-top: 16px; background: var(--white); overflow: hidden; }
+.hero::before, .hero::after { display: none; }
+.hero-card {
+  position: relative; isolation: isolate; display: grid; grid-template-columns: minmax(0, 1.02fr) minmax(0, .98fr);
+  align-items: end; gap: 12px; width: min(1240px, 100% - 32px);
+  padding: clamp(36px, 5vw, 64px) clamp(22px, 4vw, 56px) 0; border-radius: 40px; overflow: hidden;
+  background: linear-gradient(135deg, #8AD5FB 0%, var(--sky-500) 55%, #3AA3EA 100%);
+}
+.hero-card::before {
+  content: ""; position: absolute; inset: 0; z-index: -1; pointer-events: none;
+  background: var(--kawung) center / 220px auto repeat; opacity: .22; mix-blend-mode: multiply;
+}
+/* Gunungan raksasa di belakang ponsel, berayun pelan seperti dimainkan dalang. */
+.hero-kayon {
+  position: absolute; z-index: -1; right: 3%; top: 6%; width: min(44%, 520px); aspect-ratio: 100 / 115;
+  background: var(--gunungan) center / contain no-repeat; opacity: .26;
+  transform-origin: 50% 98%; animation: kayon 7s ease-in-out infinite alternate;
+}
+@keyframes kayon { from { transform: rotate(-3deg); } to { transform: rotate(3deg); } }
+
+.hero-copy { text-align: left; max-width: none; margin: 0; padding-bottom: clamp(36px, 5vw, 60px); }
+.hero-copy .pill { background: rgb(255 255 255 / .75); color: var(--navy-900); }
+.hero h1 { color: var(--navy-900); }
+.hero .hl { color: var(--navy-900); background: var(--white); border-radius: 14px; padding: 0 10px; }
+.hero .lead { margin-left: 0; color: var(--navy-900); }
+.hero .cta-row { justify-content: flex-start; }
+.hero .btn-ghost { background: rgb(255 255 255 / .78); border-color: transparent; color: var(--navy-900); }
+.hero-note { color: var(--navy-800); font-weight: 600; }
+.hero-aksara { margin-top: 10px; display: flex; align-items: baseline; gap: 10px; color: var(--navy-900); font-weight: 700; font-size: 14px; }
+.hero-aksara .aks { font-size: 26px; }
+.hero-facts { list-style: none; margin: 18px 0 0; padding: 0; display: flex; flex-wrap: wrap; gap: 10px; }
+.hero-facts li { display: grid; padding: 10px 16px; border-radius: 18px; background: rgb(255 255 255 / .86); }
+.hero-facts b { color: var(--navy-900); font-size: 17px; }
+.hero-facts span { color: #33485C; font-size: 13px; }
+
+.hero-card .hero-stage { width: 100%; height: 560px; margin: 0; }
+.hero-card .sun { width: 620px; height: 620px; bottom: -260px; opacity: .9; }
+.hero-card .phone-left { left: calc(50% - 255px); transform: rotate(-9deg) scale(.88); transform-origin: bottom center; }
+.hero-card .phone-right { right: calc(50% - 255px); transform: rotate(9deg) scale(.88); transform-origin: bottom center; }
+
+/* Gelembung koreksi: salah dulu, lalu saran yang lebih sopan, berulang. */
+.fix-bubbles { position: absolute; inset: 0; z-index: 4; pointer-events: none; }
+.fx {
+  position: absolute; max-width: 250px; padding: 12px 15px; border-radius: 18px; font-size: 16px; font-weight: 700; line-height: 1.4;
+  box-shadow: 0 14px 30px rgb(6 42 73 / .22); animation: fx-cycle 9s ease-in-out infinite both;
+}
+.fx mark { padding: 0 4px; border-radius: 6px; }
+.fx-wrong { right: 0; top: 24%; background: var(--white); color: var(--navy-900); border-bottom-right-radius: 4px; }
+.fx-wrong mark { background: var(--bad-bg); color: var(--bad); }
+.fx-right { left: 0; top: 40%; background: var(--navy-900); color: var(--white); font-weight: 600; border-bottom-left-radius: 4px; animation-delay: 1.3s; }
+.fx-right small { display: block; margin-bottom: 2px; color: var(--gold-300); font-size: 12px; font-weight: 800; }
+.fx-right mark { background: var(--good-bg); color: #0E5C2C; font-weight: 800; }
+@keyframes fx-cycle {
+  0%, 4% { opacity: 0; transform: translateY(12px) scale(.96); }
+  11%, 86% { opacity: 1; transform: none; }
+  95%, 100% { opacity: 0; transform: translateY(-6px); }
+}
+.tangga-chip {
+  position: absolute; z-index: 4; left: 0; top: 6%; display: flex; align-items: center; gap: 10px;
+  padding: 10px 14px; border-radius: 18px; background: var(--white); box-shadow: 0 14px 30px rgb(6 42 73 / .18);
+  font-size: 13px; line-height: 1.3; color: var(--muted);
+}
+.tangga-chip b { display: block; color: var(--navy-900); }
+.tangga { display: inline-flex; align-items: flex-end; gap: 3px; }
+.tangga i { width: 10px; border-radius: 3px; background: var(--navy-700); animation: tangga 3s ease-in-out infinite; }
+.tangga i:nth-child(1) { height: 10px; background: #FFB224; }
+.tangga i:nth-child(2) { height: 20px; animation-delay: .25s; }
+.tangga i:nth-child(3) { height: 30px; animation-delay: .5s; }
+@keyframes tangga { 0%, 100% { opacity: .55; } 30%, 70% { opacity: 1; } }
+
+/* ---------- Pita aksara Jawa ---------- */
+.ribbon-aksara { transform: none; width: 100%; left: 0; margin-top: 28px; padding: 16px 0; box-shadow: none; }
+.ribbon-aksara span { font-size: clamp(16px, 1.8vw, 20px); }
+.ribbon-aksara .aks { margin-right: 10px; font-size: clamp(24px, 2.6vw, 30px); color: var(--gold-300); line-height: 1; }
+
+/* ---------- Satu kalimat: bab bernomor ---------- */
+.lesson-intro .eyebrow { margin-bottom: 10px; }
+.lesson-chapters { counter-reset: bab; }
+.lesson-chapter { counter-increment: bab; }
+.lesson-chapter h3::before {
+  content: "0" counter(bab) " / 04"; display: block; margin-bottom: 6px;
+  font-size: 13px; font-weight: 800; letter-spacing: .04em; color: var(--navy-700);
+}
+
+/* ---------- Bu Sari: gapura dan bayangan wayang ---------- */
+.section-sari { background: #F7F2EA; overflow-x: clip; }
+.section-sari .sari-halo {
+  width: min(460px, 92%); aspect-ratio: 23 / 27; border-radius: 230px 230px 32px 32px;
+  background: radial-gradient(circle at 50% 35%, var(--sky-300), var(--sky-500));
+  box-shadow: 0 0 0 12px #FFFDF8, 0 0 0 15px var(--gold-500);
+}
+/* Bayangan wayang di kelir: siluet Bu Sari yang bergeser pelan berlawanan arah. */
+.sari-shadow {
+  position: absolute; bottom: 0; width: min(460px, 90%); height: auto; pointer-events: none;
+  filter: brightness(0) blur(3px); opacity: .22; transform: translateX(42px);
+  -webkit-mask-image: linear-gradient(#000 82%, transparent 99%); mask-image: linear-gradient(#000 82%, transparent 99%);
+  animation: kelir 9s ease-in-out infinite alternate;
+}
+@keyframes kelir { from { transform: translateX(40px); } to { transform: translateX(62px); } }
+.roles li { border-radius: 40px 40px 14px 14px; border: 2px solid #E8DCC8; background: var(--white); }
+.roles li:first-child { border-color: var(--sky-300); }
+
+/* ---------- Cara kerja: bento ---------- */
+.steps-bento { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; }
+.steps-bento .step { grid-template-columns: 1fr; gap: 22px; align-content: start; padding: clamp(22px, 3vw, 32px); border-radius: 32px; background: var(--sky-50); }
+.steps-bento .step-flip .step-copy { order: 0; }
+.steps-bento .step:nth-child(2) { background: var(--gold-100); }
+.steps-bento .step:nth-child(3) { position: relative; overflow: hidden; background: var(--navy-900); }
+.steps-bento .step:nth-child(3)::before {
+  content: ""; position: absolute; inset: 0; pointer-events: none;
+  background: var(--kawung) center / 180px auto repeat; opacity: .12;
+}
+.steps-bento .step:nth-child(3) > * { position: relative; }
+.steps-bento .step:nth-child(3) h3 { color: var(--white); }
+.steps-bento .step:nth-child(3) .step-copy > p { color: #CFE4F4; }
+.steps-bento .step:nth-child(3) .ticks li { color: var(--white); }
+.steps-bento .step:nth-child(3) .step-num { background: var(--gold-300); color: var(--navy-900); }
+.steps-bento .step:nth-child(3) .step-visual { background: rgb(255 255 255 / .08); }
+.steps-bento .step-visual { min-height: 280px; padding: 24px; border-radius: 26px; }
+
+/* ---------- Bahasa: kepala kain ---------- */
+.lang-card { position: relative; overflow: hidden; padding-top: 76px; }
+.lang-card::before {
+  content: ""; position: absolute; inset: 0 0 auto; height: 54px;
+  background: var(--kawung) center / 120px auto repeat, var(--sogan);
+}
+.langs .lang-card:nth-child(2)::before { background: var(--kawung) center / 120px auto repeat, var(--navy-700); }
+
+/* ---------- Busana adat: atap joglo di atas panggung ---------- */
+.adat-gallery::before {
+  content: ""; display: block; width: min(520px, 80%); height: clamp(56px, 8vw, 96px); margin: 0 auto 28px;
+  background: var(--joglo) center bottom / 100% 100% no-repeat;
+}
+
+/* ---------- Ajakan penutup: kartu beratap joglo ---------- */
+.cta-joglo { background: var(--white); color: var(--white); overflow: visible; padding-top: clamp(90px, 12vw, 170px); }
+.cta-joglo .cta-grid {
+  position: relative; isolation: isolate; padding-inline: clamp(22px, 4vw, 56px);
+  border-radius: 0 0 40px 40px; background: var(--navy-900);
+}
+.cta-joglo .cta-grid::before {
+  content: ""; position: absolute; left: 0; right: 0; bottom: calc(100% - 1px); height: clamp(70px, 11vw, 150px);
+  background: var(--joglo) center bottom / 100% 100% no-repeat;
+}
+.cta-joglo .cta-grid::after {
+  content: ""; position: absolute; inset: 0; z-index: -1; border-radius: inherit; pointer-events: none;
+  background: var(--kawung) center / 200px auto repeat; opacity: .1;
+}
+.cta-joglo .cta-visual { overflow: hidden; border-radius: 0 0 40px 0; }
+.cta-aksara { margin: -10px 0 26px; }
+.cta-aksara .aks { color: var(--gold-300); font-size: clamp(20px, 2.4vw, 26px); }
+
+/* ---------- Tanya jawab ---------- */
+.faq details { border-color: transparent; border-radius: 24px; background: #F4F6F9; box-shadow: none; }
+.faq details[open] { border-color: var(--sky-300); background: var(--white); }
+
+/* ---------- Footer berpita parang ---------- */
+.site-footer { position: relative; padding-top: 78px; }
+.site-footer::before { content: ""; position: absolute; inset: 0 0 auto; height: 14px; background: var(--parang) left center / 22px 14px repeat-x, var(--gold-100); }
+
+/* ---------- Kartu unduh mengambang (bilah bawah di ponsel) ---------- */
+.float-download {
+  position: fixed; right: 24px; bottom: 24px; z-index: 60; display: flex; align-items: center; gap: 12px;
+  padding: 10px 18px 10px 10px; border-radius: 22px; background: var(--white); color: var(--navy-900); text-decoration: none;
+  border: 1px solid #E3EEF7; box-shadow: 0 18px 40px rgb(6 42 73 / .22);
+  opacity: 0; visibility: hidden; transform: translateY(16px);
+  transition: opacity .25s var(--ease), transform .25s var(--ease), visibility 0s linear .25s;
+}
+.float-download.is-shown { opacity: 1; visibility: visible; transform: none; transition-delay: 0s; }
+.float-download img { border-radius: 14px; }
+.float-download span { display: grid; line-height: 1.3; }
+.float-download small { color: var(--muted); font-size: 13px; }
+.float-download:hover { box-shadow: 0 22px 46px rgb(6 42 73 / .28); }
+
+/* ---------- Layar sempit ---------- */
+@media (max-width: 1080px) {
+  .hero-card { grid-template-columns: 1fr; }
+  .hero-copy { padding-bottom: 8px; }
+  .hero-card .hero-stage { max-width: 620px; margin-inline: auto; }
+}
+
+@media (max-width: 900px) {
+  .nav-list { left: 16px; right: 16px; border-radius: 24px; border: 1px solid #E3EEF7; }
+  .steps-bento { grid-template-columns: 1fr; }
+  .cta-joglo .cta-visual { border-radius: 0 0 40px 40px; }
+}
+
+@media (max-width: 720px) {
+  .header-inner { height: 58px; }
+  :root { --header-h: 84px; }
+  .hero-card { border-radius: 30px; padding-top: 30px; }
+  .hero-card .hero-stage { height: 520px; }
+  .hero-card .phone-left { left: calc(50% - 200px); }
+  .hero-card .phone-right { right: calc(50% - 200px); }
+  .hero-kayon { right: -10%; top: auto; bottom: 0; width: 90%; }
+  .fx { max-width: 200px; font-size: 14px; padding: 10px 12px; }
+  .hero-facts { flex-wrap: nowrap; gap: 8px; }
+  .hero-facts li { flex: 1 1 0; min-width: 0; padding: 8px 10px; border-radius: 14px; }
+  .hero-facts b { font-size: 15px; }
+  .hero-facts span { font-size: 12px; line-height: 1.3; }
+  .tangga-chip { top: 2%; }
+  .float-download {
+    left: 12px; right: 12px; bottom: 12px; border-radius: 20px;
+    padding: 8px 10px 8px 8px; justify-content: flex-start;
+  }
+  .float-download::after {
+    content: "Unduh"; margin-left: auto; padding: 10px 16px; border-radius: 999px;
+    background: var(--sky-500); color: var(--navy-900); font-weight: 800;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-kayon, .sari-shadow, .tangga i { animation: none; }
+  .fx { animation: none; opacity: 1; transform: none; }
+  .tangga i { opacity: 1; }
+  .float-download { transition: none; }
+}
