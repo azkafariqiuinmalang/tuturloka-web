@@ -41,7 +41,7 @@ export default function Home() {
         <div className="container header-inner">
           <a className="brand" href="#beranda" aria-label="Tuturloka, ke awal halaman">
             <img src={logoTuturloka.src} alt="" width="36" height="36" />
-            <span>TuturLoka</span>
+            <span>Tuturloka</span>
           </a>
           <Navigation />
           <a className="btn btn-navy btn-sm header-cta" href="https://play.google.com/store/apps/details?id=com.khasyaraka.scout_os&amp;pcampaignid=web_share" target="_blank" rel="noopener">
@@ -189,7 +189,7 @@ export default function Home() {
                 </article>
                 <article className="lesson-chapter">
                   <h3>Bandingkan ragam katanya.</h3>
-                  <p>Kamus TuturLoka memperlihatkan bagaimana kata “makan” berubah sesuai konteks. Sekarang coba pilih kalimatmu sendiri.</p>
+                  <p>Kamus Tuturloka memperlihatkan bagaimana kata “makan” berubah sesuai konteks. Sekarang coba pilih kalimatmu sendiri.</p>
                   <div className="lesson-example lesson-words">
                     <dl>
                       <div><dt lang="jv">mangan</dt><dd>Ngoko</dd></div>
@@ -451,7 +451,7 @@ export default function Home() {
       <footer className="site-footer">
         <div className="container footer-grid">
           <div className="footer-brand">
-            <a className="brand brand-light" href="#beranda"><img src={logoTuturloka.src} alt="" width="36" height="36" loading="lazy" /><span>TuturLoka</span></a>
+            <a className="brand brand-light" href="#beranda"><img src={logoTuturloka.src} alt="" width="36" height="36" loading="lazy" /><span>Tuturloka</span></a>
             <p>Tahu artinya itu mudah. Tahu cara mengatakannya kepada nenek, guru, atau orang yang baru dikenal, itulah yang Tuturloka latih.</p>
           </div>
           <nav aria-label="Tautan bawah">
